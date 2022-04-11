@@ -1,7 +1,3 @@
-from OrderBook import OrderBook
-from Order import Order
-
-
 class MyWrapper:
 
     @staticmethod
@@ -17,3 +13,7 @@ class MyWrapper:
         for i in indexes_list:
             actual_orders.append(MyWrapper.return_order_by_list_index(order_book, i))
         return actual_orders
+
+    @staticmethod
+    def return_order_as_list(order):
+        return [order.id, order.order_type, order.price, order.volume]
