@@ -4,7 +4,7 @@ import const
 class Order:
     def __init__(self, order_type, price, volume):
         if order_type not in const.order_type_list:
-            raise AttributeError("order_type should be 'bid' or 'ask")
+            raise AttributeError("order_type should be 'bid' or 'ask'")
         if not isinstance(price, int):
             raise TypeError("price should be int")
         if not isinstance(volume, int):
