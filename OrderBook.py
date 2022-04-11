@@ -54,3 +54,18 @@ class OrderBook:
                 break
         if not flag:
             raise ValueError('No order with this id was found')
+
+    def set_order_price_by_id(self, id, price):
+        if not isinstance(id, int):
+            raise TypeError("id should be int")
+        if not isinstance(price, int):
+            raise TypeError("price should be int")
+        flag = False
+        for order in self.order_book:
+            if order.id == id:
+                order.price = price
+                flag = True
+                break
+        if not flag:
+            raise ValueError('No order with this id was found')
+        
